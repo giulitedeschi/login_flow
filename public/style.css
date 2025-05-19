@@ -1,0 +1,216 @@
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding: 2rem;
+            background: #f0f2f5;
+        }
+
+       
+        /* Floating Labels Form */
+        .floating-form {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .floating-form .input-group {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .floating-form input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-bottom: 2px solid #444;
+            background: transparent;
+            color: white;
+            outline: none;
+        }
+
+        .floating-form label {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+
+        .floating-form input:focus ~ label,
+        .floating-form input:valid ~ label {
+            top: -10px;
+            font-size: 0.8rem;
+            color: #8B5CF6;
+        }
+
+        .floating-form input:focus {
+            border-bottom-color: #8B5CF6;
+        }
+
+        .floating-form button {
+            width: 100%;
+            padding: 1rem;
+            background: #8B5CF6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-form button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .floating-form button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Card Flip Form */
+        .card-flip-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .card-flip {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card-flip.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #6366F1, #A855F7);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-flip input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .card-flip button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #6366F1;
+            color: white;
+            cursor: pointer;
+        }
+
+   /*Fade in*/
+   .fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/*password length checker*/
+#top {
+    color: green;
+}
+
+.group {
+    width: auto;
+    text-align: center;
+}
+
+.group label {
+    display: block;
+    padding: 20px 0;
+}
+
+.group input {
+    border: none;
+    outline: none;
+    padding: 20px;
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    background-color: #eaeff2;
+    color: #3ba62f;
+    font-size: 20px;
+}
+
+.group .power-container {
+    background-color: #2E424D;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+}
+
+.group .power-container #power-point {
+    background-color: #D73F40;
+    width: 1%;
+    height: 100%;
+    border-radius: 5px;
+    transition: 0.5s;
+}
