@@ -8,7 +8,7 @@ form.addEventListener("submit",(event)=> {
   console.log("ciao")
   if(password.value != confirm_password.value) {
     event.preventDefault()
-    confirm_password.setCustomValidity("Passwords Don't Match");
+    confirm_password.setCustomValidity("Le password non corrispondono.");
   } else {
     confirm_password.setCustomValidity('');
     //window.location.href="/login"
