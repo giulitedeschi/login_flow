@@ -1,0 +1,35 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+		<body>
+			<center>
+				<h1 class = "fade-in">Benvenuto!</h1>
+        <p class = "fade-in">Iscriviti tramite questo form.</p>
+			</center>
+	<form class="floating-form" method="post" action="/signup" id="registra">
+        <h2>Signup</h2>
+        <div class="input-group">
+            <input type="email" name= "email" required>
+            <label>Email Address</label>
+        </div>
+        <div class="input-group">
+    <input type="password" required pattern=".{5,}" name="password" id = "password"></p>
+            <label>Password (Almeno 5 caratteri)</label> 
+        </div>
+                <div class="input-group">
+    <input type="password" required pattern=".{5,}" name="pwdconfirm" id = "confirm_password"></p>
+            <label>Conferma Password</label>
+        </div>
+
+        <button type="submit" name="registra">Registrati</button>
+    <center>
+    </br>
+        <small>Hai già un account? <a href="login.html">Accedi</a></small>
+    </center>
+    </form>
+    <script src="signup.js"></script>
+</body>
+
+	
+</html>

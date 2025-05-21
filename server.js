@@ -28,7 +28,8 @@ app.post("/login", async (req, res) => {
   } else {
     const user = await usersComponent.login(email, password)
     if (user) {
-      res.redirect("/home")
+        res.sendFile(path.join(__dirname, "./public/home.html"))
+
     } else {
       res.sendStatus(400)
     }
@@ -48,7 +49,7 @@ app.post("/signup", async (req, res) => {
   } else {
     console.log("ok")
     await usersComponent.create(email, password)
-    res.sendStatus(200)
+    res.sendFile(path.join(__dirname, "./public/success.html"))
     console.log("nok")
   }
 })
